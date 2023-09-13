@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <GridPane prefHeight="400.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Username">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="username" GridPane.columnIndex="1" />
+            <TextField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Password" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Button fx:id="signin" mnemonicParsing="false" onAction="#signinAction" prefHeight="26.0" prefWidth="62.0" text="Sign In" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Button>
+            <Label fx:id="connected" text="Connected!" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Label>
+         </children>
+      </GridPane>
+   </left>
+   <right>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane fx:id="resultpane" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <Button fx:id="searchid" layoutX="14.0" layoutY="34.0" mnemonicParsing="false" onAction="#searchIDFinish" prefHeight="26.0" prefWidth="44.0" text="ID" />
+                  <Button fx:id="searchtime" layoutX="72.0" layoutY="80.0" mnemonicParsing="false" onAction="#searchTime" prefHeight="26.0" prefWidth="56.0" text="Time" />
+                  <TextArea fx:id="resulttable" editable="false" layoutX="3.0" layoutY="161.0" prefHeight="231.0" prefWidth="194.0" promptText="Values go here!" />
+                  <Label layoutX="73.0" layoutY="5.0" snapToPixel="false" text="Search by:" />
+                  <TextField fx:id="idsearch" layoutX="68.0" layoutY="34.0" prefHeight="26.0" prefWidth="118.0" promptText="Search ID" />
+                  <Label layoutX="18.0" layoutY="107.0" text="Search between these times" />
+                  <TextField fx:id="timestamp1" layoutX="14.0" layoutY="125.0" prefHeight="26.0" prefWidth="72.0" />
+                  <TextField fx:id="timestamp2" layoutX="107.0" layoutY="126.0" prefHeight="26.0" prefWidth="79.0" />
+               </children></AnchorPane>
+        </content>
+      </ScrollPane>
+   </right>
+   <center>
+      <Pane fx:id="commandpane" prefHeight="200.0" prefWidth="200.0" visible="false" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="swipein" layoutX="43.0" layoutY="72.0" mnemonicParsing="false" onAction="#swipeIn" text="Swipe Card In" />
+            <Label layoutX="52.0" layoutY="14.0" text="Card ID for Swipe:" />
+            <Button fx:id="swipeout" layoutX="38.0" layoutY="108.0" mnemonicParsing="false" onAction="#swipeOut" text="Swipe Card Out" />
+            <TextField fx:id="cardid" layoutX="26.0" layoutY="39.0" promptText="Card ID" />
+            <TextField fx:id="databaseid" layoutX="13.0" layoutY="200.0" promptText="Card ID 2" />
+            <TextField fx:id="activatename" layoutX="13.0" layoutY="292.0" promptText="Card name" />
+            <TextField fx:id="activaterank" layoutX="13.0" layoutY="325.0" promptText="Card rank" />
+            <Label layoutX="12.0" layoutY="181.0" text="Reactivate and Activate" />
+            <Button fx:id="activate" layoutX="22.0" layoutY="357.0" mnemonicParsing="false" onAction="#activateFinish" text="Activate New Card" />
+            <Button fx:id="reactivate" layoutX="97.0" layoutY="226.0" mnemonicParsing="false" onAction="#reactivateFinish" prefHeight="25.0" prefWidth="100.0" text="Reactivate Card" />
+            <Button fx:id="suspend" layoutX="7.0" layoutY="226.0" mnemonicParsing="false" onAction="#suspendFinish" prefHeight="25.0" prefWidth="89.0" text="Suspend Card" />
+            <Label layoutX="23.0" layoutY="267.0" text="Name and Rank for card" />
+            <Label fx:id="swipedin" layoutX="78.0" layoutY="137.0" text="Swiped in" visible="false" />
+            <Label layoutX="13.0" layoutY="164.0" text="Card ID for Suspend" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
