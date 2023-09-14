@@ -1,0 +1,23 @@
+Captions for provided screenshots:
+
+In pre-login, I'm showing the view before login. Note how little is visible.
+
+In post-login, everything is revealed.
+
+ShowingDatabase1 is me showing the elements in the database; 2 is me showing in the app to show they are the same.
+
+Swipes is after swiping in and out. I was unable to get a proper datetime working  in MySQL; I use  a random number between 1 and 1000000 in its place.
+
+Showing users is a view of the users in database.
+
+Suspension is after suspending a user.
+
+SuspendedSwipe shows that suspended users can't swipe in.
+
+Reactivation is after reactivating the suspended user.
+
+NewActivation shows a new user activation.
+
+IDSearch shows search via ID.
+
+TimeSearch shows search via (again, randomized) timestamp.
